@@ -1,0 +1,223 @@
+/* 🌑 Contenedor principal con dos columnas */
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* 🧩 Columna izquierda - Formulario */
+.login-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;   /* Centra horizontalmente */
+  align-items: center;       /* Centra verticalmente */
+  padding: 2rem;
+  background-color: #121212;
+  min-width: 400px;
+}
+
+/* 🎨 Columna derecha - Imagen */
+.login-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Imagen que ocupa todo el espacio disponible */
+.login-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* 💾 Tarjeta contenedora del formulario */
+.card {
+  background: #1f1f2e;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* 🏷️ Título del formulario - GRIS OSCURO */
+.form-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #666666 !important; /* Cambiado a gris oscuro */
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* 📋 Formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form label {
+  color: #e0e0e0;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+/* ✏️ Campos de entrada - TEXTO EN GRIS OSCURO */
+.form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background-color: #2d2d3d;
+  font-size: 1rem;
+  color: #666666 !important; /* Gris oscuro para el texto */
+  box-sizing: border-box;
+}
+
+/* Texto específico para email y password */
+.form input[type="email"],
+.form input[type="password"] {
+  color: #666666 !important; /* Gris oscuro */
+}
+
+/* Placeholder en gris más claro */
+.form input::placeholder {
+  color: #888888;
+}
+
+/* Cuando el input tiene texto escrito */
+.form input:not(:placeholder-shown) {
+  color: #666666 !important; /* Mantener gris oscuro */
+}
+
+/* Focus states - mantener gris oscuro */
+.form input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.3);
+  color: #666666 !important; /* Gris oscuro incluso en focus */
+}
+
+/* Compatibilidad con autofill de navegadores */
+.form input:-webkit-autofill,
+.form input:-webkit-autofill:hover,
+.form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #666666 !important; /* Gris oscuro */
+  -webkit-box-shadow: 0 0 0px 1000px #2d2d3d inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* 🔘 Botón principal */
+.btn.block {
+  width: 100%;
+  background-color: #646cff;
+  border: none;
+  padding: 0.75rem;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn.block:hover {
+  background-color: #747bff;
+  transform: translateY(-1px);
+}
+
+/* 🚨 Alertas */
+.alert {
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.alert.error {
+  background-color: #ff5555;
+  color: white;
+}
+
+.alert.success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* 💡 Usuarios de ejemplo */
+.hint {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: center;
+}
+
+.hint ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.hint li {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+}
+
+/* 📱 Responsive - En móviles la imagen pasa abajo */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image-section {
+    order: -1;
+    min-height: 35vh;
+    width: 100%;
+  }
+
+  .login-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .login-form-section {
+    padding: 1.5rem;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .card {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+}
+
+/* 💻 Pantallas muy grandes */
+@media (min-width: 1400px) {
+  .login-container {
+    max-height: 100vh;
+  }
+
+  .login-image-section {
+    flex: 1.2;
+  }
+
+  .login-form-section {
+    flex: 0.8;
+  }
+}
+
+

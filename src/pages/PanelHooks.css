@@ -1,0 +1,45 @@
+.card {
+  background: linear-gradient(180deg, #507c36, #1f4c69);
+  border: 1px solid #5d779c;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 20px 80px rgba(78, 48, 48, 0.35);
+}
+.card__hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+h1 { font-size: 22px; margin: 0; }
+.muted { color: var(--muted); }
+.grid {
+  list-style: none;
+  padding: 0; margin: 12px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.item {
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 14px;
+  padding: 14px;
+}
+.item__hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tag {
+  font-size: 12px;
+  color: #a3a3a3;
+  border: 1px solid #1f2937;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}

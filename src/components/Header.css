@@ -1,0 +1,111 @@
+/* 🌐 Estilos generales del header */
+.hdr {
+  background-color: #1e1e2f;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.hdr__inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 💎 Marca del proyecto */
+.brand {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #00c4ff;
+}
+
+/* 🧭 Navegación principal */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav--center {
+  justify-content: center;
+  width: 100%;
+}
+
+/* 🔗 Enlaces */
+.link {
+  text-decoration: none;
+  color: #f1f1f1;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+}
+
+.link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00c4ff;
+}
+
+.link.active {
+  background-color: #00c4ff;
+  color: #fff;
+}
+
+/* 👤 Info de usuario */
+.user-info {
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* 🔘 Botón de cerrar sesión */
+.btn.logout {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn.logout:hover {
+  background-color: #ff1f1f;
+}
+
+/* 🔹 Texto para cuando no hay sesión */
+.login-text {
+  color: #ccc;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .hdr__inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .link {
+    font-size: 0.9rem;
+  }
+}
+
+

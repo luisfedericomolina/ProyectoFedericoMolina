@@ -1,0 +1,23 @@
+/* Reutilizamos estilos de NewUser para consistencia */
+.formcard { max-width: 520px; }
+.form {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+label {
+  font-size: 14px;
+  color: #e5e7eb;
+  display: grid;
+  gap: 6px;
+}
+input {
+  background: #0a0f1c;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--text);
+  outline: none;
+}
+input:focus { border-color: #334155; }
+.row { display: flex; gap: 8px; margin-top: 6px; }
