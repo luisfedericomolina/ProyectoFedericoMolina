@@ -31,7 +31,7 @@ export default function NewUser({ crearUsuario }) {
     // Crea usuario y redirige a Gestión de Usuarios
     crearUsuario(formData);
     alert("✅ Usuario creado correctamente");
-    navigate("/usuarios"); // ← Cambiado de "/" a "/usuarios"
+    navigate("/usuarios");
   };
 
   return (

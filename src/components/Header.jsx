@@ -19,12 +19,12 @@ export default function Header() {
         <nav className={`nav ${!usuario ? "nav--center" : ""}`}>
           {usuario ? (
             <>
-              {/* 👤 Información del usuario logueado */}
+              {/* usuario logueado */}
               <span className="user-info">
                 👤 {usuario.nombre} <small>({usuario.rol})</small>
               </span>
 
-              {/* 🏠 Enlace al Home */}
+              {/* Enlace al Home */}
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -34,7 +34,7 @@ export default function Header() {
                 Inicio
               </NavLink>
 
-              {/* 🧭 Panel de Hooks */}
+              {/* Panel de Hooks */}
               <NavLink
                 to="/panel-hooks"
                 className={({ isActive }) =>
@@ -44,7 +44,7 @@ export default function Header() {
                 Panel de Hooks
               </NavLink>
 
-              {/* 👥 Gestión de usuarios */}
+              {/* Gestión de usuarios */}
               <NavLink
                 to="/usuarios"
                 className={({ isActive }) =>
@@ -66,13 +66,13 @@ export default function Header() {
                 </NavLink>
               )}
 
-              {/* 🔓 Cerrar sesión */}
+              {/* Cerrar sesión */}
               <button onClick={handleLogout} className="btn logout">
                 Cerrar sesión
               </button>
             </>
           ) : (
-            // 🔹 Cuando no hay sesión iniciada
+            // Cuando no hay sesión iniciada
             <span className="login-text">Iniciar sesión</span>
           )}
         </nav>

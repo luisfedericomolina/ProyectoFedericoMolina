@@ -1,9 +1,7 @@
-// 📁 src/App.jsx
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 
-// 🧩 Componentes principales
 import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/Login";
@@ -20,22 +18,21 @@ import FormDemo from './components/FormDemo';
 import LocalStorageDemo from './components/LocalStorageDemo'; 
 import DetalleUsuario from './components/DetalleUsuario';
 
-// 🔐 Contexto de autenticación
+// Contexto de autenticación
 import { AuthProvider } from "./contexts/AuthContext";
 
 export default function App() {
-  // 👥 Estado inicial con usuarios de ejemplo
+
   const [usuarios, setUsuarios] = useState([
     { id: 1, nombre: "Admin", correo: "admin@demo.com", rol: "admin", password: "1234" },
     { id: 2, nombre: "Editor", correo: "editor@demo.com", rol: "editor", password: "1234" },
     { id: 3, nombre: "Usuario", correo: "usuario@demo.com", rol: "usuario", password: "1234" },
   ]);
 
-  // 🔔 Estado para mensajes tipo toast
+
   const [toastMessage, setToastMessage] = useState("");
 
-  // ➕ Crear nuevo usuario
-  const crearUsuario = ({ nombre, correo, rol, password }) => {
+   const crearUsuario = ({ nombre, correo, rol, password }) => {
     const nuevo = {
       id: Date.now(),
       nombre: nombre.trim(),
@@ -48,7 +45,6 @@ export default function App() {
     setTimeout(() => setToastMessage(""), 3000);
   };
 
-  // ✏️ Actualizar usuario existente
   const actualizarUsuario = (id, { nombre, correo, rol }) => {
     setUsuarios((prev) =>
       prev.map((u) => (u.id === id ? { ...u, nombre, correo, rol } : u))
@@ -57,8 +53,7 @@ export default function App() {
     setTimeout(() => setToastMessage(""), 3000);
   };
 
-  // ❌ Eliminar usuario
-  const borrarUsuario = (id) => {
+    const borrarUsuario = (id) => {
     const eliminado = usuarios.find((u) => u.id === id);
     if (confirm(`¿Deseas eliminar a ${eliminado?.nombre}?`)) {
       setUsuarios((prev) => prev.filter((u) => u.id !== id));
@@ -67,8 +62,7 @@ export default function App() {
     }
   };
 
-  // 🔄 Cambiar rol de usuario
-  const cambiarRol = (id, nuevoRol) => {
+   const cambiarRol = (id, nuevoRol) => {
     const usuario = usuarios.find((u) => u.id === id);
     if (usuario) {
       setUsuarios((prev) =>
@@ -82,18 +76,18 @@ export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        {/* 🔝 Barra superior persistente */}
+        {/*Barra superior persistente */}
         <Header />
 
-        {/* 🔔 Notificación visual */}
+        {/* Notificación visual */}
         <Toast message={toastMessage} />
 
-        {/* 🌐 Definición de rutas */}
+        {/* Definición de rutas */}
         <Routes>
-          {/* 🔓 Ruta pública: login */}
+          {/* Ruta pública: login */}
           <Route path="/login" element={<Login />} />
 
-          {/* 🏠 Página principal protegida */}
+          {/* Página principal protegida */}
           <Route
             path="/"
             element={
@@ -103,7 +97,7 @@ export default function App() {
             }
           />
 
-          {/* 🧭 Panel de Hooks */}
+          {/* Panel de Hooks */}
           <Route
             path="/panel-hooks"
             element={
@@ -113,7 +107,7 @@ export default function App() {
             }
           />
 
-          {/* 👥 Gestión de usuarios (TUS USUARIOS LOCALES) */}
+          {/*  Gestión de usuarios*/}
           <Route
             path="/usuarios"
             element={
@@ -127,7 +121,7 @@ export default function App() {
             }
           />
 
-          {/* 👑 Crear usuario — solo admin */}
+          {/* Crear usuario — solo admin */}
           <Route
             path="/nuevo-usuario"
             element={
@@ -137,7 +131,7 @@ export default function App() {
             }
           />
 
-          {/* ✏️ Editar usuario — solo editor O admin */}
+          {/* Editar usuario — solo editor O admin */}
           <Route
             path="/editar-usuario/:id"
             element={
@@ -150,16 +144,16 @@ export default function App() {
             }
           />
 
-          {/* 🎯 Demostraciones de Hooks */}
+          {/* Demostraciones de Hooks */}
           <Route path="/counter-demo" element={<CounterDemo />} />
           <Route path="/fetch-demo" element={<FetchDemo />} />
           <Route path="/form-demo" element={<FormDemo />} />
           <Route path="/localstorage-demo" element={<LocalStorageDemo />} />
           
-          {/* 👤 DETALLE USUARIO JSON PLACEHOLDER */}
+          {/* DETALLE USUARIO JSON PLACEHOLDER */}
           <Route path="/detalle-usuario/:id" element={<DetalleUsuario />} />
 
-          {/* 🚫 Redirección por defecto */}
+          {/* Redirección por defecto */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>
