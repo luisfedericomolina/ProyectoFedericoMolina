@@ -1,4 +1,3 @@
-// 📁 src/pages/Users.jsx
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
@@ -11,7 +10,7 @@ const Users = ({ usuarios = [], borrarUsuario }) => {
   const puedeEditar = usuario?.rol === "admin" || usuario?.rol === "editor";
   const puedeEliminar = usuario?.rol === "admin";
 
-  // Función para manejar el cambio de cuenta
+  // Cambio de cuenta
   const handleCambiarCuenta = () => {
     if (usuario) {
       // Si hay usuario logueado, cerrar sesión primero
@@ -43,7 +42,7 @@ const Users = ({ usuarios = [], borrarUsuario }) => {
   return (
     <div className="min-h-screen bg-gray-50 p-6 md:p-10">
       <div className="max-w-6xl mx-auto">
-        {/* 🧭 Encabezado */}
+        {/* Encabezado */}
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-4xl font-extrabold text-gray-800">
@@ -55,7 +54,7 @@ const Users = ({ usuarios = [], borrarUsuario }) => {
           </div>
 
           <div className="flex flex-col items-end space-y-3">
-            {/* ✅ Botón crear (solo admin) */}
+            {/* Botón crear (solo admin) */}
             {puedeCrear && (
               <Link
                 to="/nuevo-usuario"
@@ -65,7 +64,7 @@ const Users = ({ usuarios = [], borrarUsuario }) => {
               </Link>
             )}
 
-            {/* 🔹 Información del usuario logueado */}
+            {/* Información del usuario logueado */}
             {usuario && (
               <div className="text-sm text-gray-600 text-right">
                 <p>Conectado como: <strong>{usuario.nombre}</strong></p>
@@ -77,7 +76,7 @@ const Users = ({ usuarios = [], borrarUsuario }) => {
               </div>
             )}
 
-            {/* 🔹 Botón único para cambiar cuenta/iniciar sesión */}
+            {/* Botón único para cambiar cuenta/iniciar sesión */}
             <button
               onClick={handleCambiarCuenta}
               className="bg-blue-500 text-white px-6 py-3 rounded-xl hover:bg-blue-600 transition font-semibold"
@@ -87,7 +86,7 @@ const Users = ({ usuarios = [], borrarUsuario }) => {
           </div>
         </div>
 
-        {/* 🧾 Tabla de usuarios */}
+        {/* Tabla de usuarios */}
         <div className="bg-white shadow-lg rounded-2xl p-6">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-semibold text-teal-600">
@@ -158,7 +157,7 @@ const Users = ({ usuarios = [], borrarUsuario }) => {
                       </td>
                       <td className="py-4 px-4">
                         <div className="flex flex-wrap gap-2">
-                          {/* ✏️ Botón editar */}
+                          {/* Botón editar */}
                           <button
                             onClick={() => handleEditarClick(u)}
                             className={`px-4 py-2 rounded-lg transition text-sm ${
@@ -171,7 +170,7 @@ const Users = ({ usuarios = [], borrarUsuario }) => {
                             Editar
                           </button>
 
-                          {/* 🗑️ Botón eliminar */}
+                          {/* Botón eliminar */}
                           {puedeEliminar && (
                             <button
                               onClick={() => {
@@ -198,7 +197,7 @@ const Users = ({ usuarios = [], borrarUsuario }) => {
           )}
         </div>
 
-        {/* ℹ️ Información de permisos */}
+        {/* Información de permisos */}
         <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
           <h3 className="font-semibold text-blue-800 mb-2">
             Información de permisos:

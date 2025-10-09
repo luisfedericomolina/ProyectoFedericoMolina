@@ -15,7 +15,7 @@ export default function CrearUsuario({ agregarUsuario }) {
 
     // Validar campos simples
     if (!nombre || !correo || !password) {
-      alert("Por favor completa todos los campos obligatorios.");
+      alert("Por favor, completa todos los campos obligatorios.");
       return;
     }
 

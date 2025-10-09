@@ -1,4 +1,3 @@
-/* 🌐 Estilos generales del header */
 .hdr {
   background-color: #1e1e2f;
   color: #fff;
@@ -20,7 +19,7 @@
   justify-content: space-between;
 }
 
-/* 💎 Marca del proyecto */
+/* Marca del proyecto */
 .brand {
   font-size: 1.4rem;
   font-weight: 600;
@@ -28,7 +27,7 @@
   color: #00c4ff;
 }
 
-/* 🧭 Navegación principal */
+/* Navegación principal */
 .nav {
   display: flex;
   align-items: center;
@@ -40,7 +39,6 @@
   width: 100%;
 }
 
-/* 🔗 Enlaces */
 .link {
   text-decoration: none;
   color: #f1f1f1;
@@ -60,14 +58,12 @@
   color: #fff;
 }
 
-/* 👤 Info de usuario */
 .user-info {
   margin-right: 1rem;
   font-size: 0.9rem;
   color: #ccc;
 }
 
-/* 🔘 Botón de cerrar sesión */
 .btn.logout {
   background-color: #ff4d4d;
   color: white;
@@ -82,14 +78,14 @@
   background-color: #ff1f1f;
 }
 
-/* 🔹 Texto para cuando no hay sesión */
+/* Texto para cuando no hay sesión */
 .login-text {
   color: #ccc;
   font-size: 1rem;
   font-weight: 500;
 }
 
-/* 📱 Responsive */
+/* Responsive */
 @media (max-width: 768px) {
   .hdr__inner {
     flex-direction: column;

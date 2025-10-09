@@ -17,7 +17,7 @@ export default function Home() {
         )}
 
         <div className="home-links">
-          {/* 🔹 Corregido: ahora apunta a /panel-hooks */}
+          {}
           <NavLink to="/panel-hooks" className="home-link">
             Panel de Hooks
           </NavLink>
